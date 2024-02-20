@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+      <div>
+        <% if user_signed_in? %>
+          <%= link_to "Profile", edit_user_registration_path %>
+          <%= button_to "log out", destroy_user_session_path, method: :delete %>
+          <div id="posts">
+          (<% @posts.each do |post| %>
+          <%= render post %>
+          <p>
+          <%= link_to "Show this post", post %>
+          </p>
+          <%= link_to "New Post", new_post_path %>
+          <% end %>)
 </div>
+        <%else%>
+          <%= link_to "log in", new_user_session_path %>
+          
+        <%end%>
 
-<%= link_to "New post", new_post_path %>

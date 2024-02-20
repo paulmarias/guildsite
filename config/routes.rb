@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :useroles
+  resources :roles
   resources :posts
   resources :bases, :posts 
   
