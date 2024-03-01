@@ -14,9 +14,6 @@ class RolesTest < ApplicationSystemTestCase
     visit roles_url
     click_on "New role"
 
-    fill_in "Details", with: @role.details
-    fill_in "Rank", with: @role.rank
-    fill_in "Title", with: @role.title
     click_on "Create Role"
 
     assert_text "Role was successfully created"
@@ -27,9 +24,6 @@ class RolesTest < ApplicationSystemTestCase
     visit role_url(@role)
     click_on "Edit this role", match: :first
 
-    fill_in "Details", with: @role.details
-    fill_in "Rank", with: @role.rank
-    fill_in "Title", with: @role.title
     click_on "Update Role"
 
     assert_text "Role was successfully updated"
