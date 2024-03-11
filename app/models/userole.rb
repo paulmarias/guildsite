@@ -1,0 +1,2 @@
+class Userole < ApplicationRecord
+end
